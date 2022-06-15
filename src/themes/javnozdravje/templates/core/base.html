@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="{% static "clean/css/clean.css" %}" rel="stylesheet">
+    <link href="{% static "clean/css/javnozdravje.css" %}" rel="stylesheet">
     {% if request.journal %}
         <link href="{% static "clean/css/journal" %}{{ request.journal.id }}_override.css" rel="stylesheet">
     {% endif %}
@@ -38,8 +38,13 @@
 <div class="container">
     <header class="site-header" role="banner">
         <div id="journal-title">
-            <h1 class="menu-text">JAVNO ZDRAVJE JE</h1>
             <div class="row">
+                <div class="col-md-2">
+                    <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcT1JJ8kLGiTOD6oPcbfIIY4dwhZJOVJEps40hQDI4sZklox5Jys%26s&sp=1655301133T5acb94dd7b227293d4ac8ac00737c5154618a470d1166d089e41917e49689521"
+                         class="img-fluid header-image top-bar-image"
+                         alt="{{ request.journal.name }} logo">
+                </div>
+                <h1>jAvnOZdrAVJe jE heeRWeGOooo</h1>
                 {% if request.journal and request.journal.header_image %}
                     <div class="col-md-2">
                         <a href="{{ request.journal.site_url }}">

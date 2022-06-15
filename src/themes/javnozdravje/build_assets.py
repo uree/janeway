@@ -23,7 +23,7 @@ def copy_file(source, destination):
 
 
 def create_paths():
-    base_path = os.path.join(settings.BASE_DIR, 'static', 'clean')
+    base_path = os.path.join(settings.BASE_DIR, 'static', 'javnozdravje')
     folders = ['css']
 
     for folder in folders:
@@ -37,7 +37,7 @@ def process_journals():
         for file in journal.scss_files:
             if file.endswith('clean_override.css'):
                 print('Copying material override file for {name}'.format(name=journal.name))
-                override_css_dir = os.path.join(settings.BASE_DIR, 'static', 'clean', 'css')
+                override_css_dir = os.path.join(settings.BASE_DIR, 'static', 'javnozdravje', 'css')
                 override_css_file = os.path.join(override_css_dir, 'journal{0}_override.css'.format(str(journal.id)))
 
                 # test if the journal CSS directory exists and create it if not
@@ -51,5 +51,5 @@ def build():
     print('Creating folders')
     create_paths()
     print('Copying CSS')
-    copy_file('themes/clean/assets/css/clean.css', 'static/clean/css/clean.css')
+    copy_file('themes/javnozdravje/assets/css/javnozdravje.css', 'static/clean/css/javnozdravje.css')
     process_journals()

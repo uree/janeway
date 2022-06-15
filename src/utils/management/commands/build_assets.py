@@ -16,10 +16,13 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         themes = logic.get_theme_list()
 
+        print(themes)
+
         for theme in themes:
             module_name = "themes.{0}.build_assets".format(theme[0])
             try:
                 builder = import_module(module_name)
+                print(builder)
             except ModuleNotFoundError:
                 logger.info(
                     "Theme '%s' doesn't implement 'build_assets'.", theme)
